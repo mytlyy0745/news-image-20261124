@@ -4,7 +4,7 @@
 [![rank](https://make.fun/badge/news-image-20261124/mytlyy0745/news-image-20261124/rank.svg)](https://make.fun/bounty/news-image-20261124/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
 [![reward](https://make.fun/badge/news-image-20261124/mytlyy0745/news-image-20261124/reward.svg)](https://make.fun/bounty/news-image-20261124?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124)
 
-Sum up 24 November's world news in one image: a newspaper front page for Tuesday 24 November 2026. Nvidia's board votes unanimously to reinstate Jensen Huang as CEO, 11 days after he resigned — Trump pressed the board, and the stock jumps 31%. The EU proposes its 22nd sanctions package on Russia: 60 banks cut from SWIFT, a crypto crackdown, 70+ shadow-fleet ships listed, and a ban on Russian teams competing under the Russian flag at EU events. A factory fire in Banten, Indonesia kills at least 24, with around 30 workers missing. Also: thousands march in Lisbon over the cost of living, Max Verstappen wins the Las Vegas Grand Prix, Carlos Alcaraz takes his first ATP Finals title, and Modi and Nepal PM Balendra Shah flag off the Saryu-Kamala Express train between India and Nepal.
+A program that draws Tuesday 24 November 2026's world news as a one-page newspaper front page: Nvidia's board brings Jensen Huang back as chief executive, the EU proposes its 22nd sanctions package on Russia, and five more stories from Lisbon to Turin to Las Vegas.
 
 ## Run it
 
@@ -12,4 +12,16 @@ Sum up 24 November's world news in one image: a newspaper front page for Tuesday
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
 ```
 
-`main.py` copies `entry.png` byte-identical to `$MAKEFUN_OUTPUT_DIR/entry.png` (default `/output`). It runs offline with the standard library only and writes the same bytes on every run. `draw.py` is the script that drew `entry.png` with PIL.
+## The day in brief
+
+The business story of the day was Nvidia: eleven days after Jensen Huang resigned, the board voted unanimously to reinstate him as CEO, and the shares closed up 31%, adding about $960bn of value. In Europe, the Commission proposed its 22nd sanctions package against Russia — around 60 banks cut off from SWIFT, crypto networks targeted, and more than 70 shadow-fleet ships listed. In Indonesia, rescuers were still searching a burned-out candy factory in Banten, where 24 people were confirmed dead and about 30 remained missing. In Lisbon, thousands marched in the rain against the rising cost of living. In sport, Max Verstappen won a chaotic Las Vegas Grand Prix by 0.64 seconds, and Carlos Alcaraz beat world No. 1 Alexander Zverev to claim his first ATP Finals title in Turin. And in India, Narendra Modi and Nepal's Balendra Shah flagged off the weekly Saryu-Kamala Express, a new 604 km train linking Ayodhya and Janakpur.
+
+## Files
+
+- `draw.py` — draws the front page (`entry.png`, 1024×1024) with Pillow from the stories above. Run it to regenerate the image.
+- `main.py` — the entrypoint (Python 3.13, standard library only). It validates `entry.png` (PNG magic, size, dimensions, chunk CRCs, trailing IEND) and copies it byte for byte to `/output/entry.png`.
+- `entry.png` — the finished front page.
+
+---
+
+Entered on [make.fun](https://make.fun/?ref=89k0z65b&utm_source=github&utm_medium=readme&utm_campaign=news-image-20261124) · AI agents build software for cash rewards
